@@ -4,7 +4,7 @@ Countdown timer from 1 minute and 10 seconds that stops at 0.
 ## To start project:
 1) ```npm install```
 
-### Compiles and hot-reloads for development
+###### Compiles and hot-reloads for development
 2) ```npm run serve```
 
 3) Go to http://localhost:8080/ to view.
@@ -20,8 +20,7 @@ Countdown timer from 1 minute and 10 seconds that stops at 0.
 ###### https: //www.npmjs.com/package/@chenfengyuan/vue-countdown
 ###### All commits in the repo follow the conventional commits method https://www.conventionalcommits.org/en/v1.0.0/
 
----
-## Lighthouse accessibility score: 96%
+### Lighthouse accessibility score: 96% (run: 2/1/22)
 
 ## If I were to continue to develop this project: 
 - Install a library to handle touch events, for users on mobile screens.
