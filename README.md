@@ -18,10 +18,11 @@ Countdown timer from 1 minute and 10 seconds that stops at 0.
 
 ###### Used Npm Vue Countdown package
 ###### https: //www.npmjs.com/package/@chenfengyuan/vue-countdown
+###### All commits in the repo follow the conventional commits method https://www.conventionalcommits.org/en/v1.0.0/
 
 ---
 ## Lighthouse accessibility score: 96%
----
+
 ## If I were to continue to develop this project: 
 - Install a library to handle touch events, for users on mobile screens.
 	- https://www.npmjs.com/package/vue2-touch-events
