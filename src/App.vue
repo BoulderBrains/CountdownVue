@@ -1,15 +1,39 @@
 <template>
-  <div id="app">
-	<div>
-		<h1>Countdown Timer</h1>
-	</div>
-	<div class="container">
-		<div class="countdown-wrapper" @dblclick="start" @click="pause">
-			<countdown :auto-start="false" ref="countdown" :time="70 * 1000" @end="pause" v-slot="{ minutes, seconds }" :key="componentKey">{{minutes}}m {{seconds}}s</countdown>
+	<div id="app">
+		<div class="flex-box-centered heading">
+			<h1>Countdown Timer</h1>
+		</div>
+		<div class="flex-box-centered">
+			<button
+				type="button"
+				aria-label="start-pause-button"
+				class="countdown-wrapper"
+				@dblclick="start"
+				@click="pause"
+			>
+				<countdown
+					:auto-start="false"
+					ref="countdown"
+					:time="70 * 1000"
+					@end="pause"
+					v-slot="{ minutes, seconds }"
+					:key="componentKey"
+				>
+					{{minutes}}m {{seconds}}s
+				</countdown>
+			</button>
+		</div>
+		<div class="flex-box-centered">
+			<button
+				type="button"
+				aria-label="reset-button"
+				class="reset-button"
+				@click="reset"
+			>
+				Reset
+			</button>
 		</div>
 	</div>
-	<button class="reset-button" @click="reset">Reset</button>
-  </div>
 </template>
 
 <script>
@@ -23,13 +47,18 @@ export default {
 	},
 	methods: {
 		start() {
+			// reach out to the countdown component
+			// through it's ref trigger it to start
 			this.$refs.countdown.start();
 		},
 		pause() {
+			// reach out to the countdown component
+			// through it's ref trigger it to pause
 			this.$refs.countdown.abort();
 		},
 		reset() {
-			// update the component key, which resets the component
+			// update the component key,
+			//which resets the component
 			this.componentKey += 1;
 		}
 	}
@@ -41,19 +70,21 @@ export default {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
 	color: #2c3e50;
 	margin-top: 3.75rem;
 }
 
-h1 { 
-	color: #5E5E5E;
+.flex-box-centered {
+	display: flex;
+	justify-content: center;;
+}
+
+.heading {
 	margin-bottom: 2.25rem;
 }
 
-.container {
-	display: flex;
-	justify-content: center;;
+h1 { 
+	color: #5E5E5E;
 }
 
 .countdown-wrapper {
@@ -61,18 +92,14 @@ h1 {
     height: 18.75rem;
 	width: 18.75rem;
     background-color: black;
-	display: flex;
-    justify-content: center;
     color: white;
     font-size: 4.375rem;
     font-weight: bold;
-	align-items: center;
 	cursor: pointer;
 	margin-bottom: 2.25rem;
 }
 
 .reset-button {
-	justify-content: center;
 	background-color: #42A1F8;
 	border: none;
 	width: 12.5rem;
